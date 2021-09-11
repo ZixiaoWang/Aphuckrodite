@@ -1,0 +1,8 @@
+# NODE DEPENDENCIES
+node_modules
+
+# LOCAL FOLDERS/FILES
+poc
+
+# LOG
+yarn-error.log
