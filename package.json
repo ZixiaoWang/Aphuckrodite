@@ -8,6 +8,15 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
+  "homepage": "https://github.com/ZixiaoWang/Aphuckrodite#readme",
+  "author": {
+    "name": "Jacky",
+    "url": "https://github.com/ZixiaoWang/Aphuckrodite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ZixiaoWang/Aphuckrodite.git"
+  },
   "devDependencies": {
     "@types/css": "^0.0.33",
     "@types/sass": "^1.16.1",
@@ -21,5 +30,11 @@
   },
   "scripts": {
     "build": "esbuild src/index.ts --bundle --metafile=esbuild.json --minify --outfile=dist/index.js --platform=node --external:fsevents --tree-shaking=ignore-annotations"
-  }
+  },
+  "licenses": [
+    {
+      "type": "WTFPL",
+      "url": "http://www.wtfpl.net/"
+    }
+  ]
 }
