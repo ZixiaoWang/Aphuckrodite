@@ -7,8 +7,7 @@ export interface AphuckroditeSelectorInstance {
 
 export interface AphuckroditePropertyInstance {
     _len: number,
-    _defination: string,
-    _children: any
+    _defination: string
 }
 
 export interface AphuckroditeInstance {

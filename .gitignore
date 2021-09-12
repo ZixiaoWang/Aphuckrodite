@@ -3,6 +3,8 @@ node_modules
 
 # LOCAL FOLDERS/FILES
 poc
+src/**/*.js
+*.node
 
 # LOG
 yarn-error.log

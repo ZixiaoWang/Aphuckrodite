@@ -3,7 +3,7 @@ import { renderSync, Result } from 'sass';
 
 import { hash } from './hash';
 import { registerByAST, registerByClass } from './register';
-import { AphuckroditeInstance, AphuckroditePropertyInstance, AphuckroditeSelectorInstance, CSSAST, styleFragment } from '../interfaces';
+import { AphuckroditeInstance, AphuckroditePropertyInstance, CSSAST, styleFragment } from '../interfaces';
 
 const isObject = (value: any): boolean => {
     return Object.prototype.toString.call(value) === '[object Object]';
@@ -38,53 +38,54 @@ const createCSS = (cssStyles: string): void => {
     registerByAST(cssAST);
 }
 
-const create = (style: styleFragment, preClass?: string): AphuckroditeInstance | null => {
-    const stringifyDefinations = (defination: any): AphuckroditePropertyInstance => {
-        let _defination: string = '';
-        let _children: any = {};
+const create = (style: styleFragment): AphuckroditeInstance | null => {
 
-        _defination = '{' + _defination;
+    const checkClassName = (className: string): string => {
+        if (/^[A-Za-z]/.test(className)) {
+            return className;
+        }
+        throw new Error('Invalid class Name, class name should start with alphabets, but got ' + className)
+    }
+
+    const generatePropertyInstance = (defination: any): AphuckroditePropertyInstance => {
+        let _defination: string = '{';
+
         Object
             .keys(defination)
             .forEach((prop: string) => {
                 const property: string = dashifyCamel(prop);
                 const value: any = defination[prop];
                 if (typeof value === 'string') {
-                    _defination += property + ': ' + value;
+                    _defination += property + ': ' + value + ';';
                 } else if (typeof value === 'number') {
                     _defination += property + ': ' + value.toString() + 'px;';
-                } else {
-                    _children[prop] = value;
                 }
             });
+        
         _defination = _defination + '}';
 
         return {
             _defination,
-            _len: _defination.length,
-            _children
+            _len: _defination.length
         }
     }
 
     if (isObject(style)) {
-        const instance: AphuckroditeInstance = {};
+        let instance: AphuckroditeInstance = {};
 
         Object
             .keys(style)
-            .forEach((key: string) => {
-                const value: any = style[key];
-                const meta = stringifyDefinations(value);
-                const children: any = create(meta._children);
-                const _name: string = key + '_' + hash(meta._defination);
+            .forEach((className: string) => {
+                checkClassName(className);
+                const meta = generatePropertyInstance(style[className]);
+                const _name: string = className + '_' + hash(meta._defination);
 
-                delete meta._children;
-                registerByClass(_name, meta._defination);                
+                registerByClass('.' + _name, meta._defination);                
 
-                instance[key] = {
+                instance[className] = {
                     _name,
-                    ...meta,
-                    ...children
-                }
+                    ...meta
+                };
             });
 
         return instance;
@@ -94,7 +95,6 @@ const create = (style: styleFragment, preClass?: string): AphuckroditeInstance |
 }
 
 export const StyleSheet = {
-    createCSS,
     createSASS,
     create
 }
