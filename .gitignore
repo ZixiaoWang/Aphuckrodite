@@ -2,6 +2,7 @@
 node_modules
 
 # LOCAL FOLDERS/FILES
+.parcel-cache
 poc
 src/**/*.js
 *.node

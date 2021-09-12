@@ -1,12 +1,12 @@
 import { hash } from './hash';
-import { classStore } from './store';
+import { store } from './store';
 
 export const inject = () => {
     if (document && document.createElement) {
         const styleElement: HTMLStyleElement = document.createElement('style');
         
         let styleInnerText: string = '';
-        classStore.forEach((defination: string, selector: string) => {
+        store.forEach((defination: string, selector: string) => {
             styleInnerText += [selector, defination].join(' ');
             styleInnerText += '\n';
         });

@@ -1,5 +1,5 @@
 import { CSSAST } from '../interfaces';
-import { classStore } from './store';
+import { store } from './store';
 
 export const registerByAST = (cssAST: CSSAST): void => {
     if (cssAST.type === 'stylesheet') {
@@ -14,7 +14,7 @@ export const registerByAST = (cssAST: CSSAST): void => {
                     ?.join(' ') + "}";
 
                 if (selector.length > 0) {
-                    classStore.set(selector, defination);
+                    store.set(selector, defination);
                 }
             } else {
                 // TODO (jacky) - other types
@@ -24,5 +24,5 @@ export const registerByAST = (cssAST: CSSAST): void => {
 }
 
 export const registerByClass = (className: string, value: string): void => {
-    classStore.set(className, value);
+    store.set(className, value);
 }
