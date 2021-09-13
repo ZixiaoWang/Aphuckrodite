@@ -6,6 +6,7 @@ node_modules
 poc
 src/**/*.js
 *.node
+index.html
 
 # LOG
 yarn-error.log

@@ -38,7 +38,7 @@ const createCSS = (cssStyles: string): void => {
     registerByAST(cssAST);
 }
 
-const create = (style: styleFragment): AphuckroditeInstance | null => {
+const create = (style: styleFragment): AphuckroditeInstance => {
 
     const checkClassName = (className: string): string => {
         if (/^[A-Za-z]/.test(className)) {
@@ -91,7 +91,7 @@ const create = (style: styleFragment): AphuckroditeInstance | null => {
         return instance;
     }
 
-    return null;
+    return {};
 }
 
 export const StyleSheet = {

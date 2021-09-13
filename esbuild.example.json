@@ -1,5 +1,83 @@
 {
   "inputs": {
+    "node_modules/object-assign/index.js": {
+      "bytes": 2108,
+      "imports": []
+    },
+    "node_modules/react/cjs/react.development.js": {
+      "bytes": 72141,
+      "imports": [
+        {
+          "path": "node_modules/object-assign/index.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/react/index.js": {
+      "bytes": 190,
+      "imports": [
+        {
+          "path": "node_modules/react/cjs/react.development.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/scheduler/cjs/scheduler.development.js": {
+      "bytes": 17563,
+      "imports": []
+    },
+    "node_modules/scheduler/index.js": {
+      "bytes": 198,
+      "imports": [
+        {
+          "path": "node_modules/scheduler/cjs/scheduler.development.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/scheduler/cjs/scheduler-tracing.development.js": {
+      "bytes": 9001,
+      "imports": []
+    },
+    "node_modules/scheduler/tracing.js": {
+      "bytes": 214,
+      "imports": [
+        {
+          "path": "node_modules/scheduler/cjs/scheduler-tracing.development.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/react-dom/cjs/react-dom.development.js": {
+      "bytes": 894563,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/object-assign/index.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/scheduler/index.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/scheduler/tracing.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/react-dom/index.js": {
+      "bytes": 1363,
+      "imports": [
+        {
+          "path": "node_modules/react-dom/cjs/react-dom.development.js",
+          "kind": "require-call"
+        }
+      ]
+    },
     "src/modules/css.ts": {
       "bytes": 511,
       "imports": []
@@ -16,15 +94,6 @@
       "bytes": 753,
       "imports": []
     },
-    "node_modules/inherits/inherits.js": {
-      "bytes": 250,
-      "imports": [
-        {
-          "path": "node_modules/inherits/inherits_browser.js",
-          "kind": "require-call"
-        }
-      ]
-    },
     "node_modules/css/lib/stringify/compress.js": {
       "bytes": 3589,
       "imports": [
@@ -33,7 +102,7 @@
           "kind": "require-call"
         },
         {
-          "path": "node_modules/inherits/inherits.js",
+          "path": "node_modules/inherits/inherits_browser.js",
           "kind": "require-call"
         }
       ]
@@ -46,7 +115,7 @@
           "kind": "require-call"
         },
         {
-          "path": "node_modules/inherits/inherits.js",
+          "path": "node_modules/inherits/inherits_browser.js",
           "kind": "require-call"
         }
       ]
@@ -170,8 +239,16 @@
         }
       ]
     },
-    "node_modules/atob/node-atob.js": {
-      "bytes": 130,
+    "node_modules/atob/browser-atob.js": {
+      "bytes": 1362,
+      "imports": []
+    },
+    "(disabled):url": {
+      "bytes": 0,
+      "imports": []
+    },
+    "(disabled):path": {
+      "bytes": 0,
       "imports": []
     },
     "node_modules/decode-uri-component/index.js": {
@@ -182,7 +259,15 @@
       "bytes": 9750,
       "imports": [
         {
-          "path": "node_modules/atob/node-atob.js",
+          "path": "node_modules/atob/browser-atob.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):url",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):path",
           "kind": "require-call"
         },
         {
@@ -190,6 +275,10 @@
           "kind": "require-call"
         }
       ]
+    },
+    "(disabled):fs": {
+      "bytes": 0,
+      "imports": []
     },
     "node_modules/css/lib/stringify/source-map-support.js": {
       "bytes": 3006,
@@ -204,6 +293,14 @@
         },
         {
           "path": "node_modules/source-map-resolve/index.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):fs",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):path",
           "kind": "require-call"
         }
       ]
@@ -238,13 +335,34 @@
         }
       ]
     },
+    "(disabled):events": {
+      "bytes": 0,
+      "imports": []
+    },
+    "(disabled):util": {
+      "bytes": 0,
+      "imports": []
+    },
+    "(disabled):stream": {
+      "bytes": 0,
+      "imports": []
+    },
     "node_modules/picomatch/lib/constants.js": {
       "bytes": 4448,
-      "imports": []
+      "imports": [
+        {
+          "path": "(disabled):path",
+          "kind": "require-call"
+        }
+      ]
     },
     "node_modules/picomatch/lib/utils.js": {
       "bytes": 1885,
       "imports": [
+        {
+          "path": "(disabled):path",
+          "kind": "require-call"
+        },
         {
           "path": "node_modules/picomatch/lib/constants.js",
           "kind": "require-call"
@@ -281,6 +399,10 @@
       "bytes": 9956,
       "imports": [
         {
+          "path": "(disabled):path",
+          "kind": "require-call"
+        },
+        {
           "path": "node_modules/picomatch/lib/scan.js",
           "kind": "require-call"
         },
@@ -310,6 +432,22 @@
     "node_modules/readdirp/index.js": {
       "bytes": 8876,
       "imports": [
+        {
+          "path": "(disabled):fs",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):stream",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):path",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):util",
+          "kind": "require-call"
+        },
         {
           "path": "node_modules/picomatch/index.js",
           "kind": "require-call"
@@ -346,114 +484,130 @@
         }
       ]
     },
-    "node_modules/chokidar/node_modules/glob-parent/index.js": {
+    "(disabled):os": {
+      "bytes": 0,
+      "imports": []
+    },
+    "node_modules/glob-parent/index.js": {
       "bytes": 1120,
       "imports": [
         {
           "path": "node_modules/is-glob/index.js",
           "kind": "require-call"
+        },
+        {
+          "path": "(disabled):path",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):os",
+          "kind": "require-call"
         }
       ]
     },
-    "node_modules/chokidar/node_modules/braces/lib/utils.js": {
+    "node_modules/braces/lib/utils.js": {
       "bytes": 2451,
       "imports": []
     },
-    "node_modules/chokidar/node_modules/braces/lib/stringify.js": {
+    "node_modules/braces/lib/stringify.js": {
       "bytes": 700,
       "imports": [
         {
-          "path": "node_modules/chokidar/node_modules/braces/lib/utils.js",
+          "path": "node_modules/braces/lib/utils.js",
           "kind": "require-call"
         }
       ]
     },
-    "node_modules/chokidar/node_modules/is-number/index.js": {
+    "node_modules/is-number/index.js": {
       "bytes": 411,
       "imports": []
     },
-    "node_modules/chokidar/node_modules/to-regex-range/index.js": {
+    "node_modules/to-regex-range/index.js": {
       "bytes": 6481,
       "imports": [
         {
-          "path": "node_modules/chokidar/node_modules/is-number/index.js",
+          "path": "node_modules/is-number/index.js",
           "kind": "require-call"
         }
       ]
     },
-    "node_modules/chokidar/node_modules/fill-range/index.js": {
+    "node_modules/fill-range/index.js": {
       "bytes": 6315,
       "imports": [
         {
-          "path": "node_modules/chokidar/node_modules/to-regex-range/index.js",
+          "path": "(disabled):util",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/to-regex-range/index.js",
           "kind": "require-call"
         }
       ]
     },
-    "node_modules/chokidar/node_modules/braces/lib/compile.js": {
+    "node_modules/braces/lib/compile.js": {
       "bytes": 1415,
       "imports": [
         {
-          "path": "node_modules/chokidar/node_modules/fill-range/index.js",
+          "path": "node_modules/fill-range/index.js",
           "kind": "require-call"
         },
         {
-          "path": "node_modules/chokidar/node_modules/braces/lib/utils.js",
+          "path": "node_modules/braces/lib/utils.js",
           "kind": "require-call"
         }
       ]
     },
-    "node_modules/chokidar/node_modules/braces/lib/expand.js": {
+    "node_modules/braces/lib/expand.js": {
       "bytes": 2780,
       "imports": [
         {
-          "path": "node_modules/chokidar/node_modules/fill-range/index.js",
+          "path": "node_modules/fill-range/index.js",
           "kind": "require-call"
         },
         {
-          "path": "node_modules/chokidar/node_modules/braces/lib/stringify.js",
+          "path": "node_modules/braces/lib/stringify.js",
           "kind": "require-call"
         },
         {
-          "path": "node_modules/chokidar/node_modules/braces/lib/utils.js",
+          "path": "node_modules/braces/lib/utils.js",
           "kind": "require-call"
         }
       ]
     },
-    "node_modules/chokidar/node_modules/braces/lib/constants.js": {
+    "node_modules/braces/lib/constants.js": {
       "bytes": 1593,
       "imports": []
     },
-    "node_modules/chokidar/node_modules/braces/lib/parse.js": {
+    "node_modules/braces/lib/parse.js": {
       "bytes": 6913,
       "imports": [
         {
-          "path": "node_modules/chokidar/node_modules/braces/lib/stringify.js",
+          "path": "node_modules/braces/lib/stringify.js",
           "kind": "require-call"
         },
         {
-          "path": "node_modules/chokidar/node_modules/braces/lib/constants.js",
+          "path": "node_modules/braces/lib/constants.js",
           "kind": "require-call"
         }
       ]
     },
-    "node_modules/chokidar/node_modules/braces/index.js": {
+    "node_modules/braces/index.js": {
       "bytes": 4375,
       "imports": [
         {
-          "path": "node_modules/chokidar/node_modules/braces/lib/stringify.js",
+          "path": "node_modules/braces/lib/stringify.js",
           "kind": "require-call"
         },
         {
-          "path": "node_modules/chokidar/node_modules/braces/lib/compile.js",
+          "path": "node_modules/braces/lib/compile.js",
           "kind": "require-call"
         },
         {
-          "path": "node_modules/chokidar/node_modules/braces/lib/expand.js",
+          "path": "node_modules/braces/lib/expand.js",
           "kind": "require-call"
         },
         {
-          "path": "node_modules/chokidar/node_modules/braces/lib/parse.js",
+          "path": "node_modules/braces/lib/parse.js",
           "kind": "require-call"
         }
       ]
@@ -475,6 +629,10 @@
       "bytes": 239,
       "imports": [
         {
+          "path": "(disabled):path",
+          "kind": "require-call"
+        },
+        {
           "path": "node_modules/binary-extensions/index.js",
           "kind": "require-call"
         }
@@ -482,11 +640,32 @@
     },
     "node_modules/chokidar/lib/constants.js": {
       "bytes": 1834,
-      "imports": []
+      "imports": [
+        {
+          "path": "(disabled):path",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):os",
+          "kind": "require-call"
+        }
+      ]
     },
     "node_modules/chokidar/lib/nodefs-handler.js": {
       "bytes": 19969,
       "imports": [
+        {
+          "path": "(disabled):fs",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):path",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):util",
+          "kind": "require-call"
+        },
         {
           "path": "node_modules/is-binary-path/index.js",
           "kind": "require-call"
@@ -501,6 +680,18 @@
       "bytes": 16274,
       "imports": [
         {
+          "path": "(disabled):fs",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):path",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):util",
+          "kind": "require-call"
+        },
+        {
           "path": "node_modules/chokidar/lib/constants.js",
           "kind": "require-call"
         }
@@ -510,6 +701,22 @@
       "bytes": 28368,
       "imports": [
         {
+          "path": "(disabled):events",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):fs",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):path",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):util",
+          "kind": "require-call"
+        },
+        {
           "path": "node_modules/readdirp/index.js",
           "kind": "require-call"
         },
@@ -518,7 +725,7 @@
           "kind": "require-call"
         },
         {
-          "path": "node_modules/chokidar/node_modules/glob-parent/index.js",
+          "path": "node_modules/glob-parent/index.js",
           "kind": "require-call"
         },
         {
@@ -526,7 +733,7 @@
           "kind": "require-call"
         },
         {
-          "path": "node_modules/chokidar/node_modules/braces/index.js",
+          "path": "node_modules/braces/index.js",
           "kind": "require-call"
         },
         {
@@ -547,11 +754,23 @@
         }
       ]
     },
+    "(disabled):readline": {
+      "bytes": 0,
+      "imports": []
+    },
     "node_modules/sass/sass.dart.js": {
       "bytes": 4001925,
       "imports": [
         {
           "path": "node_modules/chokidar/index.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):readline",
+          "kind": "require-call"
+        },
+        {
+          "path": "(disabled):fs",
           "kind": "require-call"
         }
       ]
@@ -623,196 +842,316 @@
           "kind": "import-statement"
         }
       ]
+    },
+    "example/components/header.tsx": {
+      "bytes": 733,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/index.ts",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "example/components/footer.tsx": {
+      "bytes": 1683,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/index.ts",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "example/components/index.ts": {
+      "bytes": 51,
+      "imports": [
+        {
+          "path": "example/components/header.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "example/components/footer.tsx",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "example/index.tsx": {
+      "bytes": 400,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-dom/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/index.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "example/components/index.ts",
+          "kind": "import-statement"
+        }
+      ]
     }
   },
   "outputs": {
-    "index.node.js": {
+    "example/index.js": {
       "imports": [],
       "exports": [],
-      "entryPoint": "src/index.ts",
+      "entryPoint": "example/index.tsx",
       "inputs": {
+        "node_modules/object-assign/index.js": {
+          "bytesInOutput": 2262
+        },
+        "node_modules/react/cjs/react.development.js": {
+          "bytesInOutput": 65968
+        },
+        "node_modules/react/index.js": {
+          "bytesInOutput": 247
+        },
+        "node_modules/scheduler/cjs/scheduler.development.js": {
+          "bytesInOutput": 18469
+        },
+        "node_modules/scheduler/index.js": {
+          "bytesInOutput": 259
+        },
+        "node_modules/scheduler/cjs/scheduler-tracing.development.js": {
+          "bytesInOutput": 10149
+        },
+        "node_modules/scheduler/tracing.js": {
+          "bytesInOutput": 267
+        },
+        "node_modules/react-dom/cjs/react-dom.development.js": {
+          "bytesInOutput": 810916
+        },
+        "node_modules/react-dom/index.js": {
+          "bytesInOutput": 279
+        },
         "node_modules/css/lib/parse/index.js": {
-          "bytesInOutput": 4812
+          "bytesInOutput": 11635
         },
         "node_modules/css/lib/stringify/compiler.js": {
-          "bytesInOutput": 307
+          "bytesInOutput": 732
         },
         "node_modules/inherits/inherits_browser.js": {
-          "bytesInOutput": 333
-        },
-        "node_modules/inherits/inherits.js": {
-          "bytesInOutput": 142
+          "bytesInOutput": 954
         },
         "node_modules/css/lib/stringify/compress.js": {
-          "bytesInOutput": 2097
+          "bytesInOutput": 3274
         },
         "node_modules/css/lib/stringify/identity.js": {
-          "bytesInOutput": 2902
+          "bytesInOutput": 4427
         },
         "node_modules/source-map/lib/base64.js": {
-          "bytesInOutput": 369
+          "bytesInOutput": 1213
         },
         "node_modules/source-map/lib/base64-vlq.js": {
-          "bytesInOutput": 558
+          "bytesInOutput": 1808
         },
         "node_modules/source-map/lib/util.js": {
-          "bytesInOutput": 3374
+          "bytesInOutput": 9377
         },
         "node_modules/source-map/lib/array-set.js": {
-          "bytesInOutput": 1055
+          "bytesInOutput": 2397
         },
         "node_modules/source-map/lib/mapping-list.js": {
-          "bytesInOutput": 638
+          "bytesInOutput": 1451
         },
         "node_modules/source-map/lib/source-map-generator.js": {
-          "bytesInOutput": 4782
+          "bytesInOutput": 11377
         },
         "node_modules/source-map/lib/binary-search.js": {
-          "bytesInOutput": 448
+          "bytesInOutput": 1609
         },
         "node_modules/source-map/lib/quick-sort.js": {
-          "bytesInOutput": 342
+          "bytesInOutput": 1021
         },
         "node_modules/source-map/lib/source-map-consumer.js": {
-          "bytesInOutput": 11945
+          "bytesInOutput": 25307
         },
         "node_modules/source-map/lib/source-node.js": {
-          "bytesInOutput": 3722
+          "bytesInOutput": 10210
         },
         "node_modules/source-map/source-map.js": {
-          "bytesInOutput": 137
+          "bytesInOutput": 337
         },
-        "node_modules/atob/node-atob.js": {
-          "bytesInOutput": 122
+        "node_modules/atob/browser-atob.js": {
+          "bytesInOutput": 1188
+        },
+        "(disabled):url": {
+          "bytesInOutput": 70
+        },
+        "(disabled):path": {
+          "bytesInOutput": 72
         },
         "node_modules/decode-uri-component/index.js": {
-          "bytesInOutput": 957
+          "bytesInOutput": 2389
         },
         "node_modules/source-map-resolve/index.js": {
-          "bytesInOutput": 3904
+          "bytesInOutput": 10578
+        },
+        "(disabled):fs": {
+          "bytesInOutput": 68
         },
         "node_modules/css/lib/stringify/source-map-support.js": {
-          "bytesInOutput": 1350
+          "bytesInOutput": 2815
         },
         "node_modules/css/lib/stringify/index.js": {
-          "bytesInOutput": 286
+          "bytesInOutput": 787
         },
         "node_modules/css/index.js": {
-          "bytesInOutput": 49
+          "bytesInOutput": 174
+        },
+        "(disabled):events": {
+          "bytesInOutput": 76
+        },
+        "(disabled):util": {
+          "bytesInOutput": 73
+        },
+        "(disabled):stream": {
+          "bytesInOutput": 76
         },
         "node_modules/picomatch/lib/constants.js": {
-          "bytesInOutput": 2669
+          "bytesInOutput": 4648
         },
         "node_modules/picomatch/lib/utils.js": {
-          "bytesInOutput": 1053
+          "bytesInOutput": 2307
         },
         "node_modules/picomatch/lib/scan.js": {
-          "bytesInOutput": 3208
+          "bytesInOutput": 10211
         },
         "node_modules/picomatch/lib/parse.js": {
-          "bytesInOutput": 12144
+          "bytesInOutput": 29202
         },
         "node_modules/picomatch/lib/picomatch.js": {
-          "bytesInOutput": 2309
+          "bytesInOutput": 5754
         },
         "node_modules/picomatch/index.js": {
-          "bytesInOutput": 51
+          "bytesInOutput": 173
         },
         "node_modules/readdirp/index.js": {
-          "bytesInOutput": 4017
+          "bytesInOutput": 9130
         },
         "node_modules/normalize-path/index.js": {
-          "bytesInOutput": 372
+          "bytesInOutput": 874
         },
         "node_modules/anymatch/index.js": {
-          "bytesInOutput": 1156
+          "bytesInOutput": 2969
         },
         "node_modules/is-extglob/index.js": {
-          "bytesInOutput": 189
+          "bytesInOutput": 474
         },
         "node_modules/is-glob/index.js": {
-          "bytesInOutput": 461
+          "bytesInOutput": 1172
         },
-        "node_modules/chokidar/node_modules/glob-parent/index.js": {
-          "bytesInOutput": 441
+        "(disabled):os": {
+          "bytesInOutput": 68
         },
-        "node_modules/chokidar/node_modules/braces/lib/utils.js": {
-          "bytesInOutput": 1018
+        "node_modules/glob-parent/index.js": {
+          "bytesInOutput": 983
         },
-        "node_modules/chokidar/node_modules/braces/lib/stringify.js": {
-          "bytesInOutput": 331
+        "node_modules/braces/lib/utils.js": {
+          "bytesInOutput": 2630
         },
-        "node_modules/chokidar/node_modules/is-number/index.js": {
-          "bytesInOutput": 178
+        "node_modules/braces/lib/stringify.js": {
+          "bytesInOutput": 953
         },
-        "node_modules/chokidar/node_modules/to-regex-range/index.js": {
-          "bytesInOutput": 2903
+        "node_modules/is-number/index.js": {
+          "bytesInOutput": 426
         },
-        "node_modules/chokidar/node_modules/fill-range/index.js": {
-          "bytesInOutput": 2840
+        "node_modules/to-regex-range/index.js": {
+          "bytesInOutput": 7350
         },
-        "node_modules/chokidar/node_modules/braces/lib/compile.js": {
-          "bytesInOutput": 671
+        "node_modules/fill-range/index.js": {
+          "bytesInOutput": 7410
         },
-        "node_modules/chokidar/node_modules/braces/lib/expand.js": {
-          "bytesInOutput": 1463
+        "node_modules/braces/lib/compile.js": {
+          "bytesInOutput": 1767
         },
-        "node_modules/chokidar/node_modules/braces/lib/constants.js": {
-          "bytesInOutput": 987
+        "node_modules/braces/lib/expand.js": {
+          "bytesInOutput": 3416
         },
-        "node_modules/chokidar/node_modules/braces/lib/parse.js": {
-          "bytesInOutput": 3007
+        "node_modules/braces/lib/constants.js": {
+          "bytesInOutput": 1559
         },
-        "node_modules/chokidar/node_modules/braces/index.js": {
-          "bytesInOutput": 713
+        "node_modules/braces/lib/parse.js": {
+          "bytesInOutput": 7579
+        },
+        "node_modules/braces/index.js": {
+          "bytesInOutput": 2069
         },
         "node_modules/binary-extensions/binary-extensions.json": {
-          "bytesInOutput": 1674
+          "bytesInOutput": 4132
         },
         "node_modules/binary-extensions/index.js": {
-          "bytesInOutput": 38
+          "bytesInOutput": 177
         },
         "node_modules/is-binary-path/index.js": {
-          "bytesInOutput": 140
+          "bytesInOutput": 380
         },
         "node_modules/chokidar/lib/constants.js": {
-          "bytesInOutput": 1352
+          "bytesInOutput": 2276
         },
         "node_modules/chokidar/lib/nodefs-handler.js": {
-          "bytesInOutput": 6558
+          "bytesInOutput": 16666
         },
         "node_modules/chokidar/lib/fsevents-handler.js": {
-          "bytesInOutput": 5748
+          "bytesInOutput": 14698
         },
         "node_modules/chokidar/index.js": {
-          "bytesInOutput": 11278
+          "bytesInOutput": 25230
+        },
+        "(disabled):readline": {
+          "bytesInOutput": 80
         },
         "node_modules/sass/sass.dart.js": {
-          "bytesInOutput": 2312714
+          "bytesInOutput": 4431267
         },
-        "src/index.ts": {
-          "bytesInOutput": 57
+        "example/index.tsx": {
+          "bytesInOutput": 489
         },
         "src/modules/css.ts": {
-          "bytesInOutput": 74
+          "bytesInOutput": 185
+        },
+        "src/index.ts": {
+          "bytesInOutput": 0
         },
         "src/modules/stylesheet.ts": {
-          "bytesInOutput": 931
+          "bytesInOutput": 2273
         },
         "src/modules/hash.ts": {
-          "bytesInOutput": 94
+          "bytesInOutput": 184
         },
         "src/modules/store.ts": {
-          "bytesInOutput": 15
+          "bytesInOutput": 25
         },
         "src/modules/register.ts": {
-          "bytesInOutput": 401
+          "bytesInOutput": 894
         },
         "src/modules/injector.ts": {
-          "bytesInOutput": 386
+          "bytesInOutput": 685
+        },
+        "example/components/header.tsx": {
+          "bytesInOutput": 652
+        },
+        "example/components/index.ts": {
+          "bytesInOutput": 0
+        },
+        "example/components/footer.tsx": {
+          "bytesInOutput": 1945
         }
       },
-      "bytes": 2430300
+      "bytes": 5627476
     }
   }
 }
