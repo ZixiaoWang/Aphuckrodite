@@ -9,7 +9,7 @@ export const registerByAST = (cssAST: CSSAST): void => {
                 const defination: string = "{ " + item
                     ?.declarations
                     ?.map((declaration: CSSAST) => {
-                        return declaration.property + ": " + declaration.value;
+                        return declaration.property + ": " + declaration.value + ";"; 
                     })
                     ?.join(' ') + "}";
 

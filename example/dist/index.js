@@ -30315,7 +30315,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         if (item.type === "rule") {
           const selector = item?.selectors?.join(", ") || "";
           const defination = "{ " + item?.declarations?.map((declaration) => {
-            return declaration.property + ": " + declaration.value;
+            return declaration.property + ": " + declaration.value + ";";
           })?.join(" ") + "}";
           if (selector.length > 0) {
             store.set(selector, defination);
