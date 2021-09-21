@@ -6,7 +6,7 @@ require('esbuild')
         ...defaultConfig,
         entryPoints: [EXAMPLE_ENTRANCE],
         outfile: EXAMPLE_OUTPUT,
-        plugins: [new nodeExternalsPlugin({
+        plugins: [nodeExternalsPlugin({
             allowList: [
                 'css',
                 'react',

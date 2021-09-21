@@ -8,9 +8,10 @@ export const inject = () => {
         let styleInnerText: string = '';
         store.forEach((defination: string, selector: string) => {
             styleInnerText += [selector, defination].join(' ');
-            styleInnerText += '\n';
+            styleInnerText += ' ';
         });
 
+        styleElement.innerText = styleInnerText;
         styleElement.setAttribute('hash', hash(styleInnerText).toString());
         styleElement.setAttribute('scope', "Aphuckrodite");
         styleElement.setAttribute('length', styleInnerText.length.toString());

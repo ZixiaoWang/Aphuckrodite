@@ -29759,9 +29759,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
   });
 
-  // (disabled):node_modules/url/url.js
+  // (disabled):url
   var require_url = __commonJS({
-    "(disabled):node_modules/url/url.js"() {
+    "(disabled):url"() {
       init_define_process();
     }
   });
@@ -30402,8 +30402,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       let styleInnerText = "";
       store.forEach((defination, selector) => {
         styleInnerText += [selector, defination].join(" ");
-        styleInnerText += "\n";
+        styleInnerText += " ";
       });
+      styleElement.innerText = styleInnerText;
       styleElement.setAttribute("hash", hash(styleInnerText).toString());
       styleElement.setAttribute("scope", "Aphuckrodite");
       styleElement.setAttribute("length", styleInnerText.length.toString());
