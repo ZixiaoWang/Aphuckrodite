@@ -2,7 +2,7 @@ import React from 'react';
 import { css, StyleSheet } from '../../../src';
 import { AphuckroditeInstance } from '../../../src/interfaces';
 
-StyleSheet.createSASS(`
+StyleSheet.createCSS(`
     .footer {
         position: fixed;
         width: 100%;

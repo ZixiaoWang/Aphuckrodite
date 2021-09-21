@@ -1,10 +1,16 @@
 {
   "name": "aphuckrodite",
-  "targets": {
-    "default": {
-      "includeNodeModules": true
-    },
-    "context": "browser"
+  "version": "1.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/ZixiaoWang/Aphuckrodite#readme",
+  "author": {
+    "name": "Jacky",
+    "url": "https://github.com/ZixiaoWang/Aphuckrodite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ZixiaoWang/Aphuckrodite.git"
   },
   "browser": {
     "path": false,
@@ -17,18 +23,6 @@
     "stream": false,
     "process": false
   },
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "homepage": "https://github.com/ZixiaoWang/Aphuckrodite#readme",
-  "author": {
-    "name": "Jacky",
-    "url": "https://github.com/ZixiaoWang/Aphuckrodite"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:ZixiaoWang/Aphuckrodite.git"
-  },
   "devDependencies": {
     "@types/css": "^0.0.33",
     "@types/react": "^17.0.20",
@@ -36,23 +30,20 @@
     "@types/sass": "^1.16.1",
     "aphrodite": "^2.4.0",
     "esbuild": "^0.12.26",
-    "parcel-bundler": "^1.12.5",
+    "esbuild-node-externals": "^1.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "typescript": "^4.4.3"
   },
   "dependencies": {
-    "css": "^3.0.0",
-    "sass": "^1.39.2"
+    "css": "^3.0.0"
   },
   "scripts": {
-    "esbuild:build": "esbuild src/index.ts --bundle --metafile=esbuild.json --minify --outfile=index.js --platform=browser --external:fsevents --tree-shaking=ignore-annotations",
-    "esbuild:build:node": "esbuild src/index.ts --bundle --metafile=esbuild.node.json --minify --outfile=index.node.js --platform=node --external:fsevents --tree-shaking=ignore-annotations",
-    "esbuild:example": "esbuild example/src/index.tsx --bundle --metafile=esbuild.example.json --outfile=./example/dist/index.js --platform=browser --external:fsevents --tree-shaking=ignore-annotations --define:process.platform=\\\"darwin\\\"",
-    "build:dts": "tsc -p tsconfig.declaration.json",
-    "parcel:example": "parcel build --no-cache --no-source-maps -o index.js -d ./example ./example/index.tsx",
-    "parcel:serve": "parcel --no-cache --no-source-maps -o index.html -d ./example ./example/template.html --target browser",
-    "parcel:build": "parcel build --no-cache --no-source-maps -o index.js -d ./ ./src/index.ts --target browser --bundle-node-modules"
+    "esbuild:build": "node ./scripts/esbuild.production.js",
+    "esbuild:build:node": "node ./scripts/esbuild.node.js",
+    "esbuild:example": "node ./scripts/esbuild.example.js",
+    "build": "yarn run esbuild:build:node && yarn run esbuild:build && yarn run build:dts",
+    "build:dts": "rm -rf index.d.ts && tsc -p tsconfig.declaration.json"
   },
   "licenses": [
     {

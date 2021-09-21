@@ -1,5 +1,7 @@
 import { parse } from 'css';
-import { renderSync, Result } from 'sass';
+
+// TODO - Find a better alternaitive
+// import { renderSync, Result } from 'sass';
 
 import { hash } from './hash';
 import { registerByAST, registerByClass } from './register';
@@ -27,11 +29,12 @@ const dashifyCamel = (name: string): string => {
     throw new Error('key is not string type');
 }
 
-const createSASS = (sassStyles: string): void => {
-    const result: Result = renderSync({ data: sassStyles });
-    const cssString: string = result.css.toString();
-    createCSS(cssString);
-}
+// TODO - find a better alternative
+// const createSASS = (sassStyles: string): void => {
+//     const result: Result = renderSync({ data: sassStyles });
+//     const cssString: string = result.css.toString();
+//     createCSS(cssString);
+// }
 
 const createCSS = (cssStyles: string): void => {
     const cssAST: CSSAST = parse(cssStyles) as CSSAST;
@@ -95,6 +98,6 @@ const create = (style: styleFragment): AphuckroditeInstance => {
 }
 
 export const StyleSheet = {
-    createSASS,
+    createCSS,
     create
 }

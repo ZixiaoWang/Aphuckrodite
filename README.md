@@ -15,7 +15,7 @@ No `id` selector, no `tag` selector, no nested syntax, all the `number` value is
 
 
 ## What different?
-APIs are the same as `Aphrodite`, but it catches invalid keys or values and prevents throwing errors everywhere. Most Importantly, **IT SUPPORTS SASS!**  
+APIs are the same as `Aphrodite`, but it catches invalid keys or values and prevents throwing errors everywhere. Most Importantly, **IT SUPPORTS CSS FRAGMENT!**  
 
 ## How?
 ```typescript
@@ -34,7 +34,7 @@ const scopedStyles = Stylesheet.create({
 
 // This is global style
 // The styles can be shared in other components
-const globalStyles = Stylesheet.createSASS(`
+const globalStyles = Stylesheet.createCSS(`
     .container {
         width: 1366px;
         padding: 12px;

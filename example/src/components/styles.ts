@@ -1,6 +1,6 @@
 import { StyleSheet } from '../../../src';
 
-StyleSheet.createSASS(`
+StyleSheet.createCSS(`
     html, body {
         margin: 0px;
         font-family: 'Arial';

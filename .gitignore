@@ -7,6 +7,8 @@ poc
 src/**/*.js
 *.node
 index.html
+*.backup
+*.bkp
 
 # LOG
 yarn-error.log

@@ -1,6 +1,4 @@
-declare module "example/index" { }
-declare module "example/components/header" { }
-declare module "src/interfaces/index" {
+declare module "interfaces/index" {
     export interface AphuckroditeSelectorInstance {
         _name: string;
         _len: number;
@@ -43,8 +41,8 @@ declare module "src/interfaces/index" {
         };
     }
 }
-declare module "src/modules/css" {
-    import { AphuckroditeInstance } from "src/interfaces/index";
+declare module "modules/css" {
+    import { AphuckroditeInstance } from "interfaces/index";
     /**
      * css classname generator
      * @param { String | AphuckroditeInstance } args - Passing Aphuckrodite style instance or string
@@ -52,7 +50,7 @@ declare module "src/modules/css" {
      */
     export function css(...args: Array<string | AphuckroditeInstance>): string;
 }
-declare module "src/modules/hash" {
+declare module "modules/hash" {
     /**
      * @description - hash string
      * @thanks - https://github.com/darkskyapp/string-hash
@@ -61,26 +59,26 @@ declare module "src/modules/hash" {
      */
     export const hash: (str: string) => string;
 }
-declare module "src/modules/store" {
+declare module "modules/store" {
     export const store: Map<string, string>;
 }
-declare module "src/modules/register" {
-    import { CSSAST } from "src/interfaces/index";
+declare module "modules/register" {
+    import { CSSAST } from "interfaces/index";
     export const registerByAST: (cssAST: CSSAST) => void;
     export const registerByClass: (className: string, value: string) => void;
 }
-declare module "src/modules/stylesheet" {
-    import { AphuckroditeInstance, styleFragment } from "src/interfaces/index";
+declare module "modules/stylesheet" {
+    import { AphuckroditeInstance, styleFragment } from "interfaces/index";
     export const StyleSheet: {
-        createSASS: (sassStyles: string) => void;
-        create: (style: styleFragment) => AphuckroditeInstance | null;
+        createCSS: (cssStyles: string) => void;
+        create: (style: styleFragment) => AphuckroditeInstance;
     };
 }
-declare module "src/modules/injector" {
+declare module "modules/injector" {
     export const inject: () => void;
 }
-declare module "src/index" {
-    export * from "src/modules/css";
-    export * from "src/modules/stylesheet";
-    export * from "src/modules/injector";
+declare module "index" {
+    export * from "modules/css";
+    export * from "modules/stylesheet";
+    export * from "modules/injector";
 }
